@@ -1,0 +1,2 @@
+Timestamp,Pair,Strategy,Entry_Price_A,Entry_Price_B,Entry_Ratio,Entry_Z,Mean_Target,Pos_Size_A,Pos_Size_B,Status
+2026-02-10 11:39:29,SBIN/BANKBARODA,Mean Reversion (Short Ratio),1141.3,291.15,3.92,5.18,3.3906,-750,2925,OPEN

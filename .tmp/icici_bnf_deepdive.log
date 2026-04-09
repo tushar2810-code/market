@@ -1,0 +1,35 @@
+Running deep dive for ICICIBANK and BANKNIFTY...
+
+==================================================
+📊 BACKTEST RESULTS: ICICIBANK / BANKNIFTY
+==================================================
+Period: 2023-04-17 to 2026-02-11
+Z-Score Window: 30 Days | Entry: 2.0 | Stop: 3.5
+------------------------------
+Total Trades:     23
+Win Rate:         91.3%
+Avg Return:       0.91%
+Total Return:     20.90% (Uncompounded)
+Max Drawdown:     -8.46% (Single Trade)
+------------------------------
+
+Recent Trades:
+       Type Entry_Date  Exit_Date  Entry_Z  Exit_Z Return  Duration Reason
+Short Ratio 2024-10-22 2024-11-08     2.27   -0.06  1.04%        17 Target
+Short Ratio 2024-12-17 2025-01-02     2.08   -0.10  0.92%        16 Target
+Short Ratio 2025-01-10 2025-01-20     2.03   -1.03  2.51%        10 Target
+ Long Ratio 2025-01-21 2025-01-27    -2.42    1.28  3.86%         6 Target
+Short Ratio 2025-03-11 2025-04-08     3.26   -0.02  1.02%        28 Target
+ Long Ratio 2025-06-09 2025-07-18    -3.19    0.89  0.35%        39 Target
+Short Ratio 2025-07-21 2025-08-19     2.58   -0.09  0.26%        29 Target
+ Long Ratio 2025-09-17 2025-12-03    -2.13    0.24 -8.46%        77 Target
+ Long Ratio 2025-12-30 2026-01-06    -2.22    1.61  3.34%         7 Target
+Short Ratio 2026-01-07 2026-01-19     2.45   -0.28  3.12%        12 Target
+==================================================
+
+⚠️ CURRENT STATUS (2026-02-11)
+Z-Score: 0.01
+SIGNAL: Neutral
+
+Saved trade log to .tmp/icici_bnf_trades.csv
+Saved merged daily data to .tmp/icici_bnf_merged.csv

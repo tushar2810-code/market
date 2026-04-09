@@ -1,0 +1,38 @@
+/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:SpreadAlert:============================================================
+INFO:SpreadAlert:CALENDAR SPREAD ALERT MONITOR
+INFO:SpreadAlert:Topic: antigravity-fno-tushar
+INFO:SpreadAlert:Interval: 5 min
+INFO:SpreadAlert:Cooldown: 30 min
+INFO:SpreadAlert:Conditions:
+INFO:SpreadAlert:  RVNL spread < -15
+INFO:SpreadAlert:  KFINTECH spread < -35
+INFO:SpreadAlert:  Any symbol > ₹20,000 gain
+INFO:SpreadAlert:============================================================
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:
+--- Scan Cycle #1 @ 14:09:13 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-10.3 Gain=₹15,708 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  KFINTECH: Spread=-27.9 Gain=₹13,950 [WATCHED: threshold=-35]
+INFO:SpreadAlert:  SBICARD: Spread=-14.95 Gain=₹11,960
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.08 Gain=₹10,400
+INFO:SpreadAlert:  IREDA: Spread=-2.77 Gain=₹9,556
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #2 @ 14:33:46 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-9.5 Gain=₹14,488 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  KFINTECH: Spread=-27.2 Gain=₹13,600 [WATCHED: threshold=-35]
+INFO:SpreadAlert:  SBICARD: Spread=-14.55 Gain=₹11,640
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.13 Gain=₹10,650
+INFO:SpreadAlert:  IREDA: Spread=-2.78 Gain=₹9,591
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...

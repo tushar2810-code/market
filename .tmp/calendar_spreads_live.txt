@@ -1,0 +1,45 @@
+>>> FOUND: AMBER | Gain: 3700.00 | Spread: -37.00
+>>> FOUND: ASHOKLEY | Gain: 4750.00 | Spread: -0.95
+>>> FOUND: ASTRAL | Gain: 15130.00 | Spread: -35.60
+>>> FOUND: BDL | Gain: 5565.00 | Spread: -15.90
+>>> FOUND: CDSL | Gain: 2280.00 | Spread: -4.80
+>>> FOUND: IREDA | Gain: 5692.50 | Spread: -1.65
+>>> FOUND: IRFC | Gain: 3102.50 | Spread: -0.73
+>>> FOUND: JUBLFOOD | Gain: 10125.00 | Spread: -8.10
+>>> FOUND: KFINTECH | Gain: 2650.00 | Spread: -5.30
+>>> FOUND: KEI | Gain: 6650.00 | Spread: -38.00
+>>> FOUND: LTF | Gain: 3150.00 | Spread: -1.40
+>>> FOUND: OBEROIRLTY | Gain: 9870.00 | Spread: -28.20
+>>> FOUND: PAGEIND | Gain: 3600.00 | Spread: -240.00
+>>> FOUND: PGEL | Gain: 3752.50 | Spread: -3.95
+>>> FOUND: PIIND | Gain: 6177.50 | Spread: -35.30
+>>> FOUND: PREMIERENE | Gain: 3450.00 | Spread: -6.00
+>>> FOUND: RVNL | Gain: 15250.00 | Spread: -10.00
+>>> FOUND: SBICARD | Gain: 18000.00 | Spread: -22.50
+>>> FOUND: SHREECEM | Gain: 8750.00 | Spread: -350.00
+>>> FOUND: SWIGGY | Gain: 5395.00 | Spread: -4.15
+>>> FOUND: VOLTAS | Gain: 5212.50 | Spread: -13.90
+
+*** HIGH POTENTIAL OPPORTUNITIES (>2000.0 Gain) ***
+    Symbol  Lot_Size  Near_Price  Far_Price  Spread_Diff  Potential_Gain
+   SBICARD       800      680.25     657.75       -22.50         18000.0
+      RVNL      1525      263.00     253.00       -10.00         15250.0
+    ASTRAL       425     1604.60    1569.00       -35.60         15130.0
+  JUBLFOOD      1250      452.65     444.55        -8.10         10125.0
+OBEROIRLTY       350     1398.20    1370.00       -28.20          9870.0
+  SHREECEM        25    23395.00   23045.00      -350.00          8750.0
+       KEI       175     4127.50    4089.50       -38.00          6650.0
+     PIIND       175     2877.60    2842.30       -35.30          6177.5
+     IREDA      3450      113.61     111.96        -1.65          5692.5
+       BDL       350     1272.00    1256.10       -15.90          5565.0
+    SWIGGY      1300      278.75     274.60        -4.15          5395.0
+    VOLTAS       375     1376.10    1362.20       -13.90          5212.5
+  ASHOKLEY      5000      173.36     172.41        -0.95          4750.0
+      PGEL       950      494.20     490.25        -3.95          3752.5
+     AMBER       100     6488.50    6451.50       -37.00          3700.0
+   PAGEIND        15    30060.00   29820.00      -240.00          3600.0
+PREMIERENE       575      771.50     765.50        -6.00          3450.0
+       LTF      2250      256.90     255.50        -1.40          3150.0
+      IRFC      4250       95.33      94.60        -0.73          3102.5
+  KFINTECH       500      893.90     888.60        -5.30          2650.0
+      CDSL       475     1166.60    1161.80        -4.80          2280.0

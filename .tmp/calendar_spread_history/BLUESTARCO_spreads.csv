@@ -1,0 +1,2 @@
+timestamp,spot,near_price,far_price,near_expiry,far_expiry,near_dte,far_dte,spread,near_prem,far_prem,z_score,near_oi,far_oi
+2026-03-20 13:13,1729.4,1726.8,1713.8,30-MAR-2026,28-APR-2026,9,38,-13.0,-2.6000000000001364,-15.600000000000136,-0.48491056991520914,2081300,957450

@@ -1,0 +1,1168 @@
+/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:SpreadAlert:============================================================
+INFO:SpreadAlert:CALENDAR SPREAD ALERT MONITOR
+INFO:SpreadAlert:Topic: antigravity-fno-tushar
+INFO:SpreadAlert:Interval: 5 min
+INFO:SpreadAlert:Cooldown: 30 min
+INFO:SpreadAlert:Conditions:
+INFO:SpreadAlert:  RVNL spread < -15
+INFO:SpreadAlert:  KFINTECH spread < -35
+INFO:SpreadAlert:  Any symbol > ₹20,000 gain
+INFO:SpreadAlert:============================================================
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:
+--- Scan Cycle #1 @ 12:17:54 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 31 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-15.4 Gain=₹23,485 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.65 Gain=₹14,920
+INFO:SpreadAlert:  ASTRAL: Spread=-29.3 Gain=₹12,452
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.44 Gain=₹12,200
+INFO:SpreadAlert:  KFINTECH: Spread=-22.3 Gain=₹11,150 [WATCHED: threshold=-35]
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #2 @ 12:23:31 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 30 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-16.3 Gain=₹24,858 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.8 Gain=₹15,040
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.66 Gain=₹13,300
+INFO:SpreadAlert:  ASTRAL: Spread=-29.7 Gain=₹12,622
+INFO:SpreadAlert:  KFINTECH: Spread=-23.8 Gain=₹11,900 [WATCHED: threshold=-35]
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #3 @ 12:29:10 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 12:29:18. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #4 @ 12:34:19 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 32 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-16.25 Gain=₹24,781 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-19.0 Gain=₹15,200
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.51 Gain=₹12,550
+INFO:SpreadAlert:  ASTRAL: Spread=-29.4 Gain=₹12,495
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.8 Gain=₹11,000
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #5 @ 12:39:58 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 30 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-16.35 Gain=₹24,934 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.8 Gain=₹15,040
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.35 Gain=₹11,750
+INFO:SpreadAlert:  ASTRAL: Spread=-27.5 Gain=₹11,688
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.35 Gain=₹10,438
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #6 @ 12:45:34 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 30 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-16.4 Gain=₹25,010 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.45 Gain=₹14,760
+INFO:SpreadAlert:  ASTRAL: Spread=-29.5 Gain=₹12,538
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.3 Gain=₹11,500
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.9 Gain=₹11,125
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Spread Alert!
+RVNL spread < -15
+Current Spread: -16.4
+Near: ₹297.2 (24-FEB-2026)
+Far: ₹280.8 (30-MAR-2026)
+Lot: 1525 | Gain: ₹25,010
+Time: 12:46:12
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Spread Alert!
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹25,010 Calendar Spread!
+Potential Gain: ₹25,010
+Spread: -16.4
+Near: ₹297.2 (24-FEB-2026)
+Far: ₹280.8 (30-MAR-2026)
+Lot: 1525
+Time: 12:46:13
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹25,010 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #7 @ 12:51:14 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 30 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-16.35 Gain=₹24,934 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.95 Gain=₹15,160
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.85 Gain=₹14,250
+INFO:SpreadAlert:  ASTRAL: Spread=-27.1 Gain=₹11,518
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.6 Gain=₹10,750
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #8 @ 12:56:52 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 12:56:59. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #9 @ 13:02:00 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 29 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-16.4 Gain=₹25,010 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.15 Gain=₹14,520
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.5 Gain=₹12,500
+INFO:SpreadAlert:  ASTRAL: Spread=-28.8 Gain=₹12,240
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.75 Gain=₹10,938
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #10 @ 13:13:33 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 13:13:40. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #11 @ 13:31:13 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 13:31:21. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #12 @ 13:41:55 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.45 Gain=₹26,611 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-19.65 Gain=₹15,720
+INFO:SpreadAlert:  ASTRAL: Spread=-29.9 Gain=₹12,708
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.5 Gain=₹12,500
+INFO:SpreadAlert:  IREDA: Spread=-3.08 Gain=₹10,626
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -17.45 (Worsened)
+RVNL spread < -15
+Current Spread: -17.45
+Near: ₹301.2 (24-FEB-2026)
+Far: ₹283.75 (30-MAR-2026)
+Lot: 1525 | Gain: ₹26,611
+Time: 13:42:31
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -17.45 (Worsened)
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹26,611 Calendar Spread!
+Potential Gain: ₹26,611
+Spread: -17.45
+Near: ₹301.2 (24-FEB-2026)
+Far: ₹283.75 (30-MAR-2026)
+Lot: 1525
+Time: 13:42:32
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹26,611 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #13 @ 14:00:41 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.35 Gain=₹26,459 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-19.5 Gain=₹15,600
+INFO:SpreadAlert:  ASTRAL: Spread=-28.0 Gain=₹11,900
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.35 Gain=₹11,750
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.1 Gain=₹10,125
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #14 @ 14:06:16 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.6 Gain=₹26,840 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.95 Gain=₹15,160
+INFO:SpreadAlert:  ASTRAL: Spread=-30.1 Gain=₹12,792
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.5 Gain=₹12,500
+INFO:SpreadAlert:  IREDA: Spread=-2.85 Gain=₹9,832
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #15 @ 14:11:46 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.75 Gain=₹27,069 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.9 Gain=₹15,120
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.66 Gain=₹13,300
+INFO:SpreadAlert:  ASTRAL: Spread=-28.5 Gain=₹12,112
+INFO:SpreadAlert:  IREDA: Spread=-3.0 Gain=₹10,350
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #16 @ 14:17:18 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.6 Gain=₹26,840 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.5 Gain=₹14,800
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.45 Gain=₹12,250
+INFO:SpreadAlert:  ASTRAL: Spread=-27.2 Gain=₹11,560
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.35 Gain=₹10,438
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Spread Alert!
+RVNL spread < -15
+Current Spread: -17.6
+Near: ₹301.65 (24-FEB-2026)
+Far: ₹284.05 (30-MAR-2026)
+Lot: 1525 | Gain: ₹26,840
+Time: 14:17:50
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Spread Alert!
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹26,840 Calendar Spread!
+Potential Gain: ₹26,840
+Spread: -17.6
+Near: ₹301.65 (24-FEB-2026)
+Far: ₹284.05 (30-MAR-2026)
+Lot: 1525
+Time: 14:17:52
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹26,840 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #17 @ 14:22:53 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 29 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.95 Gain=₹27,374 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-19.05 Gain=₹15,240
+INFO:SpreadAlert:  ASTRAL: Spread=-29.3 Gain=₹12,452
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.39 Gain=₹11,950
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.15 Gain=₹10,188
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #18 @ 14:28:25 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 26 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-17.95 Gain=₹27,374 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-18.4 Gain=₹14,720
+INFO:SpreadAlert:  ASTRAL: Spread=-27.2 Gain=₹11,560
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.31 Gain=₹11,550
+INFO:SpreadAlert:  JUBLFOOD: Spread=-8.05 Gain=₹10,062
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #19 @ 14:35:27 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 14:42:49. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Post-market (closed 15:30). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Pre-market (opens 09:15). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Pre-market (opens 09:15). Sleeping 5 min...
+INFO:SpreadAlert:
+--- Scan Cycle #47 @ 09:34:15 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 09:34:22. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #48 @ 09:39:24 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 09:39:31. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #49 @ 09:44:31 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 32 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-24.0 Gain=₹36,600 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-21.55 Gain=₹17,240
+INFO:SpreadAlert:  ASTRAL: Spread=-27.9 Gain=₹11,858
+INFO:SpreadAlert:  JUBLFOOD: Spread=-9.35 Gain=₹11,688
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.29 Gain=₹11,450
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -24.0 (Worsened)
+RVNL spread < -15
+Current Spread: -24.0
+Near: ₹301.9 (24-FEB-2026)
+Far: ₹277.9 (30-MAR-2026)
+Lot: 1525 | Gain: ₹36,600
+Time: 09:45:08
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -24.0 (Worsened)
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹36,600 Calendar Spread!
+Potential Gain: ₹36,600
+Spread: -24.0
+Near: ₹301.9 (24-FEB-2026)
+Far: ₹277.9 (30-MAR-2026)
+Lot: 1525
+Time: 09:45:09
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹36,600 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #50 @ 09:50:10 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 31 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-22.7 Gain=₹34,618 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-21.15 Gain=₹16,920
+INFO:SpreadAlert:  ASTRAL: Spread=-31.3 Gain=₹13,302
+INFO:SpreadAlert:  JUBLFOOD: Spread=-9.75 Gain=₹12,188
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.38 Gain=₹11,900
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -22.7 (Improved)
+RVNL spread < -15
+Current Spread: -22.7
+Near: ₹302.05 (24-FEB-2026)
+Far: ₹279.35 (30-MAR-2026)
+Lot: 1525 | Gain: ₹34,618
+Time: 09:50:40
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -22.7 (Improved)
+INFO:SpreadAlert:Alerts fired: 1
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #51 @ 09:55:41 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 32 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-23.2 Gain=₹35,380 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-22.05 Gain=₹17,640
+INFO:SpreadAlert:  JUBLFOOD: Spread=-9.85 Gain=₹12,312
+INFO:SpreadAlert:  ASTRAL: Spread=-28.9 Gain=₹12,282
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.34 Gain=₹11,700
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #52 @ 10:01:13 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:01:20. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #53 @ 10:06:20 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 30 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-24.55 Gain=₹37,439 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-22.7 Gain=₹18,160
+INFO:SpreadAlert:  ASTRAL: Spread=-29.3 Gain=₹12,452
+INFO:SpreadAlert:  JUBLFOOD: Spread=-9.7 Gain=₹12,125
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.36 Gain=₹11,800
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -24.55 (Worsened)
+RVNL spread < -15
+Current Spread: -24.55
+Near: ₹304.0 (24-FEB-2026)
+Far: ₹279.45 (30-MAR-2026)
+Lot: 1525 | Gain: ₹37,439
+Time: 10:06:54
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -24.55 (Worsened)
+INFO:SpreadAlert:Alerts fired: 1
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #54 @ 10:11:55 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-24.9 Gain=₹37,972 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-22.5 Gain=₹18,000
+INFO:SpreadAlert:  JUBLFOOD: Spread=-10.0 Gain=₹12,500
+INFO:SpreadAlert:  ASTRAL: Spread=-28.6 Gain=₹12,155
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.28 Gain=₹11,400
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #55 @ 10:17:29 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 31 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.4 Gain=₹38,735 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-22.5 Gain=₹18,000
+INFO:SpreadAlert:  JUBLFOOD: Spread=-10.6 Gain=₹13,250
+INFO:SpreadAlert:  ASTRAL: Spread=-29.1 Gain=₹12,368
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.24 Gain=₹11,200
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹38,735 Calendar Spread!
+Potential Gain: ₹38,735
+Spread: -25.4
+Near: ₹304.0 (24-FEB-2026)
+Far: ₹278.6 (30-MAR-2026)
+Lot: 1525
+Time: 10:17:58
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹38,735 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 1
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #56 @ 10:22:59 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 31 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.45 Gain=₹38,811 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-23.0 Gain=₹18,400
+INFO:SpreadAlert:  JUBLFOOD: Spread=-10.5 Gain=₹13,125
+INFO:SpreadAlert:  ASTRAL: Spread=-27.0 Gain=₹11,475
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.25 Gain=₹11,250
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #57 @ 10:28:36 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 30 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.65 Gain=₹39,116 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-22.5 Gain=₹18,000
+INFO:SpreadAlert:  JUBLFOOD: Spread=-10.55 Gain=₹13,188
+INFO:SpreadAlert:  ASTRAL: Spread=-29.2 Gain=₹12,410
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.3 Gain=₹11,500
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -25.65 (Worsened)
+RVNL spread < -15
+Current Spread: -25.65
+Near: ₹305.0 (24-FEB-2026)
+Far: ₹279.35 (30-MAR-2026)
+Lot: 1525 | Gain: ₹39,116
+Time: 10:29:13
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -25.65 (Worsened)
+INFO:SpreadAlert:Alerts fired: 1
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #58 @ 10:35:30 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 29 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.8 Gain=₹39,345 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-23.0 Gain=₹18,400
+INFO:SpreadAlert:  JUBLFOOD: Spread=-10.45 Gain=₹13,062
+INFO:SpreadAlert:  ASTRAL: Spread=-26.9 Gain=₹11,432
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.2 Gain=₹11,000
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #59 @ 10:41:06 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:41:13. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #60 @ 10:46:14 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.6 Gain=₹39,040 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-23.2 Gain=₹18,560
+INFO:SpreadAlert:  JUBLFOOD: Spread=-10.7 Gain=₹13,375
+INFO:SpreadAlert:  ASTRAL: Spread=-28.4 Gain=₹12,070
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.13 Gain=₹10,650
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #61 @ 10:51:51 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:51:57. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #62 @ 10:56:57 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-26.2 Gain=₹39,955 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SBICARD: Spread=-23.2 Gain=₹18,560
+INFO:SpreadAlert:  JUBLFOOD: Spread=-12.2 Gain=₹15,250
+INFO:SpreadAlert:  ASTRAL: Spread=-28.5 Gain=₹12,112
+INFO:SpreadAlert:  IREDA: Spread=-3.17 Gain=₹10,936
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹39,955 Calendar Spread!
+Potential Gain: ₹39,955
+Spread: -26.2
+Near: ₹308.4 (24-FEB-2026)
+Far: ₹282.2 (30-MAR-2026)
+Lot: 1525
+Time: 10:57:29
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹39,955 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 1
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #63 @ 11:29:58 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.45 Gain=₹38,811 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-15.0 Gain=₹18,750
+INFO:SpreadAlert:  SBICARD: Spread=-21.45 Gain=₹17,160
+INFO:SpreadAlert:  ASTRAL: Spread=-27.0 Gain=₹11,475
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.0 Gain=₹10,000
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Spread Alert!
+RVNL spread < -15
+Current Spread: -25.45
+Near: ₹309.25 (24-FEB-2026)
+Far: ₹283.8 (30-MAR-2026)
+Lot: 1525 | Gain: ₹38,811
+Time: 11:30:37
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Spread Alert!
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹38,811 Calendar Spread!
+Potential Gain: ₹38,811
+Spread: -25.45
+Near: ₹309.25 (24-FEB-2026)
+Far: ₹283.8 (30-MAR-2026)
+Lot: 1525
+Time: 11:30:38
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹38,811 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #64 @ 11:35:40 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-24.35 Gain=₹37,134 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-16.35 Gain=₹20,438
+INFO:SpreadAlert:  SBICARD: Spread=-20.4 Gain=₹16,320
+INFO:SpreadAlert:  ASTRAL: Spread=-24.6 Gain=₹10,455
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.0 Gain=₹10,000
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -24.35 (Improved)
+RVNL spread < -15
+Current Spread: -24.35
+Near: ₹308.95 (24-FEB-2026)
+Far: ₹284.6 (30-MAR-2026)
+Lot: 1525 | Gain: ₹37,134
+Time: 11:36:04
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -24.35 (Improved)
+INFO:SpreadAlert:💰 ALERT: 💰 JUBLFOOD — ₹20,438 Calendar Spread!
+Potential Gain: ₹20,438
+Spread: -16.35
+Near: ₹529.25 (24-FEB-2026)
+Far: ₹512.9 (30-MAR-2026)
+Lot: 1250
+Time: 11:36:05
+INFO:SpreadAlert:✅ Notification sent: 💰 JUBLFOOD — ₹20,438 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #65 @ 11:41:06 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 25 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-23.85 Gain=₹36,371 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-15.65 Gain=₹19,562
+INFO:SpreadAlert:  SBICARD: Spread=-20.85 Gain=₹16,680
+INFO:SpreadAlert:  ASTRAL: Spread=-27.3 Gain=₹11,602
+INFO:SpreadAlert:  SHREECEM: Spread=-405.0 Gain=₹10,125
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #66 @ 11:46:33 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 25 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-24.55 Gain=₹37,439 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-14.35 Gain=₹17,938
+INFO:SpreadAlert:  SBICARD: Spread=-21.05 Gain=₹16,840
+INFO:SpreadAlert:  ASTRAL: Spread=-26.3 Gain=₹11,178
+INFO:SpreadAlert:  ASHOKLEY: Spread=-2.08 Gain=₹10,400
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #67 @ 11:51:58 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 11:52:03. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #68 @ 11:57:05 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 11:57:10. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #69 @ 12:02:10 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 12:02:15. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #70 @ 12:07:15 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 12:07:20. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #71 @ 12:12:20 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 24 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-25.5 Gain=₹38,888 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-15.95 Gain=₹19,938
+INFO:SpreadAlert:  SBICARD: Spread=-20.45 Gain=₹16,360
+INFO:SpreadAlert:  ASTRAL: Spread=-28.0 Gain=₹11,900
+INFO:SpreadAlert:  SHREECEM: Spread=-465.0 Gain=₹11,625
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -25.5 (Worsened)
+RVNL spread < -15
+Current Spread: -25.5
+Near: ₹310.5 (24-FEB-2026)
+Far: ₹285.0 (30-MAR-2026)
+Lot: 1525 | Gain: ₹38,888
+Time: 12:13:08
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -25.5 (Worsened)
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹38,888 Calendar Spread!
+Potential Gain: ₹38,888
+Spread: -25.5
+Near: ₹310.5 (24-FEB-2026)
+Far: ₹285.0 (30-MAR-2026)
+Lot: 1525
+Time: 12:13:11
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹38,888 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #72 @ 12:18:13 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 26 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-26.55 Gain=₹40,489 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-17.3 Gain=₹21,625
+INFO:SpreadAlert:  SBICARD: Spread=-21.55 Gain=₹17,240
+INFO:SpreadAlert:  ASTRAL: Spread=-28.3 Gain=₹12,028
+INFO:SpreadAlert:  SHREECEM: Spread=-475.0 Gain=₹11,875
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -26.55 (Worsened)
+RVNL spread < -15
+Current Spread: -26.55
+Near: ₹311.5 (24-FEB-2026)
+Far: ₹284.95 (30-MAR-2026)
+Lot: 1525 | Gain: ₹40,489
+Time: 12:19:11
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -26.55 (Worsened)
+INFO:SpreadAlert:💰 ALERT: 💰 JUBLFOOD — ₹21,625 Calendar Spread!
+Potential Gain: ₹21,625
+Spread: -17.3
+Near: ₹532.2 (24-FEB-2026)
+Far: ₹514.9 (30-MAR-2026)
+Lot: 1250
+Time: 12:19:12
+INFO:SpreadAlert:✅ Notification sent: 💰 JUBLFOOD — ₹21,625 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #73 @ 12:24:13 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 26 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-26.85 Gain=₹40,946 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-18.05 Gain=₹22,562
+INFO:SpreadAlert:  SBICARD: Spread=-22.2 Gain=₹17,760
+INFO:SpreadAlert:  ASTRAL: Spread=-28.6 Gain=₹12,155
+INFO:SpreadAlert:  SHREECEM: Spread=-470.0 Gain=₹11,750
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #74 @ 12:29:42 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-26.85 Gain=₹40,946 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-17.75 Gain=₹22,188
+INFO:SpreadAlert:  SBICARD: Spread=-22.15 Gain=₹17,720
+INFO:SpreadAlert:  SHREECEM: Spread=-500.0 Gain=₹12,500
+INFO:SpreadAlert:  ASTRAL: Spread=-29.2 Gain=₹12,410
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #75 @ 12:35:11 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 25 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-27.35 Gain=₹41,709 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-18.75 Gain=₹23,438
+INFO:SpreadAlert:  SBICARD: Spread=-22.6 Gain=₹18,080
+INFO:SpreadAlert:  SHREECEM: Spread=-505.0 Gain=₹12,625
+INFO:SpreadAlert:  ASTRAL: Spread=-29.1 Gain=₹12,368
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #76 @ 12:40:35 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-27.3 Gain=₹41,632 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-19.0 Gain=₹23,750
+INFO:SpreadAlert:  SBICARD: Spread=-23.1 Gain=₹18,480
+INFO:SpreadAlert:  SHREECEM: Spread=-525.0 Gain=₹13,125
+INFO:SpreadAlert:  ASTRAL: Spread=-28.3 Gain=₹12,028
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #77 @ 12:46:22 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-27.1 Gain=₹41,328 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-18.75 Gain=₹23,438
+INFO:SpreadAlert:  SBICARD: Spread=-23.2 Gain=₹18,560
+INFO:SpreadAlert:  SHREECEM: Spread=-515.0 Gain=₹12,875
+INFO:SpreadAlert:  ASTRAL: Spread=-28.4 Gain=₹12,070
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹41,328 Calendar Spread!
+Potential Gain: ₹41,328
+Spread: -27.1
+Near: ₹312.25 (24-FEB-2026)
+Far: ₹285.15 (30-MAR-2026)
+Lot: 1525
+Time: 12:46:48
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹41,328 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 1
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #78 @ 12:51:51 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 27 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-27.65 Gain=₹42,166 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-19.05 Gain=₹23,812
+INFO:SpreadAlert:  SBICARD: Spread=-23.95 Gain=₹19,160
+INFO:SpreadAlert:  SHREECEM: Spread=-570.0 Gain=₹14,250
+INFO:SpreadAlert:  ASTRAL: Spread=-29.1 Gain=₹12,368
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -27.65 (Worsened)
+RVNL spread < -15
+Current Spread: -27.65
+Near: ₹313.5 (24-FEB-2026)
+Far: ₹285.85 (30-MAR-2026)
+Lot: 1525 | Gain: ₹42,166
+Time: 12:52:21
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -27.65 (Worsened)
+INFO:SpreadAlert:💰 ALERT: 💰 JUBLFOOD — ₹23,812 Calendar Spread!
+Potential Gain: ₹23,812
+Spread: -19.05
+Near: ₹534.9 (24-FEB-2026)
+Far: ₹515.85 (30-MAR-2026)
+Lot: 1250
+Time: 12:52:22
+INFO:SpreadAlert:✅ Notification sent: 💰 JUBLFOOD — ₹23,812 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #79 @ 12:57:23 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-27.4 Gain=₹41,785 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-19.75 Gain=₹24,688
+INFO:SpreadAlert:  SBICARD: Spread=-23.9 Gain=₹19,120
+INFO:SpreadAlert:  SHREECEM: Spread=-570.0 Gain=₹14,250
+INFO:SpreadAlert:  ASTRAL: Spread=-29.4 Gain=₹12,495
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #80 @ 13:38:05 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 28 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-28.9 Gain=₹44,072 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  JUBLFOOD: Spread=-20.4 Gain=₹25,500
+INFO:SpreadAlert:  SBICARD: Spread=-26.5 Gain=₹21,200
+INFO:SpreadAlert:  ASTRAL: Spread=-32.9 Gain=₹13,982
+INFO:SpreadAlert:  IREDA: Spread=-3.74 Gain=₹12,903
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Move: -28.9 (Worsened)
+RVNL spread < -15
+Current Spread: -28.9
+Near: ₹313.0 (24-FEB-2026)
+Far: ₹284.1 (30-MAR-2026)
+Lot: 1525 | Gain: ₹44,072
+Time: 02:30:12
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Move: -28.9 (Worsened)
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹44,072 Calendar Spread!
+Potential Gain: ₹44,072
+Spread: -28.9
+Near: ₹313.0 (24-FEB-2026)
+Far: ₹284.1 (30-MAR-2026)
+Lot: 1525
+Time: 02:30:14
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹44,072 Calendar Spread!
+INFO:SpreadAlert:💰 ALERT: 💰 JUBLFOOD — ₹25,500 Calendar Spread!
+Potential Gain: ₹25,500
+Spread: -20.4
+Near: ₹540.45 (24-FEB-2026)
+Far: ₹520.05 (30-MAR-2026)
+Lot: 1250
+Time: 02:30:15
+INFO:SpreadAlert:✅ Notification sent: 💰 JUBLFOOD — ₹25,500 Calendar Spread!
+INFO:SpreadAlert:💰 ALERT: 💰 SBICARD — ₹21,200 Calendar Spread!
+Potential Gain: ₹21,200
+Spread: -26.5
+Near: ₹795.2 (24-FEB-2026)
+Far: ₹768.7 (30-MAR-2026)
+Lot: 800
+Time: 02:30:16
+INFO:SpreadAlert:✅ Notification sent: 💰 SBICARD — ₹21,200 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 4
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Weekend. Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Pre-market (opens 09:15). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Pre-market (opens 09:15). Sleeping 5 min...
+INFO:SpreadAlert:⏸️  Pre-market (opens 09:15). Sleeping 5 min...
+INFO:SpreadAlert:
+--- Scan Cycle #193 @ 09:50:12 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 09:50:19. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #194 @ 09:55:20 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 09:55:20. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #195 @ 10:00:21 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:00:21. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #196 @ 10:05:21 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:05:21. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #197 @ 10:10:22 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:10:22. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #198 @ 10:15:22 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:15:22. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #199 @ 10:20:23 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:20:23. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #200 @ 10:25:24 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:25:24. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #201 @ 10:30:24 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:30:24. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #202 @ 10:35:25 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:35:25. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #203 @ 10:40:25 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:40:25. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:Login failed: No response from API.
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #204 @ 10:53:24 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 10:53:24. Re-logging in...
+ERROR:SpreadAlert:❌ Notification error: HTTPSConnectionPool(host='ntfy.sh', port=443): Max retries exceeded with url: /antigravity-fno-tushar (Caused by NameResolutionError("HTTPSConnection(host='ntfy.sh', port=443): Failed to resolve 'ntfy.sh' ([Errno 8] nodename nor servname provided, or not known)"))
+INFO:SpreadAlert:Re-logging in to Shoonya...
+ERROR:shoonya_client:An error occurred during login: HTTPSConnectionPool(host='api.shoonya.com', port=443): Max retries exceeded with url: /NorenWClientTP//QuickAuth (Caused by NameResolutionError("HTTPSConnection(host='api.shoonya.com', port=443): Failed to resolve 'api.shoonya.com' ([Errno 8] nodename nor servname provided, or not known)"))
+Traceback (most recent call last):
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.shoonya.com', port=443): Failed to resolve 'api.shoonya.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.shoonya.com', port=443): Max retries exceeded with url: /NorenWClientTP//QuickAuth (Caused by NameResolutionError("HTTPSConnection(host='api.shoonya.com', port=443): Failed to resolve 'api.shoonya.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tushar/Documents/Antigravity FNO/execution/shoonya_client.py", line 30, in login
+    ret = self.api.login(
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/NorenRestApiPy/NorenApi.py", line 259, in login
+    res = requests.post(url, data=payload)
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/tushar/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.shoonya.com', port=443): Max retries exceeded with url: /NorenWClientTP//QuickAuth (Caused by NameResolutionError("HTTPSConnection(host='api.shoonya.com', port=443): Failed to resolve 'api.shoonya.com' ([Errno 8] nodename nor servname provided, or not known)"))
+ERROR:SpreadAlert:Re-login failed!
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...

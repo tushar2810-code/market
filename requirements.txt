@@ -1,0 +1,11 @@
+NorenRestApiOAuth
+selenium
+webdriver-manager
+pyotp
+pandas
+numpy
+scipy
+statsmodels
+requests
+python-dotenv
+anthropic

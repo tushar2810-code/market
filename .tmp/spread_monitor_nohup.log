@@ -1,0 +1,77 @@
+/Users/tushar/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+INFO:SpreadAlert:============================================================
+INFO:SpreadAlert:CALENDAR SPREAD ALERT MONITOR
+INFO:SpreadAlert:Topic: antigravity-fno-tushar
+INFO:SpreadAlert:Interval: 5 min
+INFO:SpreadAlert:Cooldown: 30 min
+INFO:SpreadAlert:Conditions:
+INFO:SpreadAlert:  RVNL spread < -15
+INFO:SpreadAlert:  KFINTECH spread < -35
+INFO:SpreadAlert:  Any symbol > ₹20,000 gain
+INFO:SpreadAlert:============================================================
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:
+--- Scan Cycle #1 @ 11:00:10 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 5 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  ASHOKLEY: Spread=-3.34 Gain=₹16,700
+INFO:SpreadAlert:  ASTRAL: Spread=-25.9 Gain=₹11,008
+INFO:SpreadAlert:  BDL: Spread=-21.6 Gain=₹7,560
+INFO:SpreadAlert:  CDSL: Spread=-6.2 Gain=₹2,945
+INFO:SpreadAlert:  DMART: Spread=-11.7 Gain=₹1,755
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #2 @ 11:41:09 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 11:41:16. Re-logging in...
+INFO:SpreadAlert:✅ Notification sent: Data Issue - 0 Results (auto-recovering)
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #3 @ 11:46:18 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 0 negative spreads found.
+WARNING:SpreadAlert:Scan returned 0 results at 11:46:22. Re-logging in...
+INFO:SpreadAlert:Re-logging in to Shoonya...
+INFO:shoonya_client:Logged in successfully as FN176274
+INFO:SpreadAlert:Re-login successful.
+INFO:SpreadAlert:Alerts fired: 0
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #4 @ 11:51:22 ---
+INFO:SpreadAlert:Scanning 208 symbols...
+INFO:SpreadAlert:Scan complete. 26 negative spreads found.
+INFO:SpreadAlert:Top opportunities:
+INFO:SpreadAlert:  RVNL: Spread=-31.1 Gain=₹47,428 [WATCHED: threshold=-15]
+INFO:SpreadAlert:  SHREECEM: Spread=-700.0 Gain=₹17,500
+INFO:SpreadAlert:  ASHOKLEY: Spread=-3.12 Gain=₹15,600
+INFO:SpreadAlert:  JUBLFOOD: Spread=-12.45 Gain=₹15,562
+INFO:SpreadAlert:  SBICARD: Spread=-18.15 Gain=₹14,520
+INFO:SpreadAlert:🔔 ALERT: 🔔 RVNL Spread Alert!
+RVNL spread < -15
+Current Spread: -31.1
+Near: ₹315.0 (24-FEB-2026)
+Far: ₹283.9 (30-MAR-2026)
+Lot: 1525 | Gain: ₹47,428
+Time: 11:51:49
+INFO:SpreadAlert:✅ Notification sent: 🔔 RVNL Spread Alert!
+INFO:SpreadAlert:💰 ALERT: 💰 RVNL — ₹47,428 Calendar Spread!
+Potential Gain: ₹47,428
+Spread: -31.1
+Near: ₹315.0 (24-FEB-2026)
+Far: ₹283.9 (30-MAR-2026)
+Lot: 1525
+Time: 11:51:50
+INFO:SpreadAlert:✅ Notification sent: 💰 RVNL — ₹47,428 Calendar Spread!
+INFO:SpreadAlert:Alerts fired: 2
+INFO:SpreadAlert:Next scan in 5 minutes...
+INFO:SpreadAlert:
+--- Scan Cycle #5 @ 12:59:53 ---
+INFO:SpreadAlert:Scanning 208 symbols...

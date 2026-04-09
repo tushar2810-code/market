@@ -1,0 +1,21 @@
+Loading data for HDFCBANK and BANKNIFTY...
+
+🚀 STARTING RIGOROUS GRID SEARCH 🚀
+Win  | Z    | TS  | ZStop | WR%    | Trd | Avg%   | MaxDD%  | Total%
+---------------------------------------------------------------------------
+30   | 1.5  | 45  | 4.0   |  77.8% | 27  |  1.73% |  -9.55% | 46.83%
+45   | 1.5  | 45  | 4.0   |  66.7% | 24  |  2.17% |  -6.40% | 52.15%
+
+==================================================
+🏆 BEST CONFIGURATION FOUND 🏆
+Window:    30
+Z-Entry:   1.5
+Z-Stop:    4.0
+Time Stop: 45
+------------------------------
+Win Rate:   77.8%
+Trades:     27
+Avg Return: 1.73%
+Max DD:     -9.55%
+==================================================
+Saved best trade log to .tmp/hdfc_bnf_best_trades.csv
