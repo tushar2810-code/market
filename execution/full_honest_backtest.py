@@ -29,7 +29,7 @@ DATA_DIR = '.tmp/3y_data'
 
 def get_continuous_prices(symbol):
     """Get clean continuous futures prices (nearest expiry)."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     try:
@@ -54,7 +54,7 @@ def get_continuous_prices(symbol):
 
 def load_multi_expiry(symbol):
     """Load ALL expiry months for calendar spread analysis."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     try:
@@ -419,8 +419,8 @@ def backtest_expiry_clean(threshold=0.3, entry_days=5):
     valid_n = 0
     
     for f in sorted(os.listdir(DATA_DIR)):
-        if not f.endswith('_3Y.csv'): continue
-        sym = f.replace('_3Y.csv', '')
+        if not f.endswith('_5Y.csv'): continue
+        sym = f.replace('_5Y.csv', '')
         
         try:
             df = pd.read_csv(os.path.join(DATA_DIR, f))

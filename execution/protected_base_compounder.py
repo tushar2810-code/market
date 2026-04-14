@@ -83,7 +83,7 @@ SECTORS = {
 # ── Data loaders (same as optimize_for_66.py) ──────────────────────────────
 
 def load_futures_data(symbol):
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     df = pd.read_csv(path)
@@ -102,7 +102,7 @@ def load_futures_data(symbol):
 
 
 def load_prices(symbol):
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     try:

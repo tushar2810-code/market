@@ -23,7 +23,7 @@ DATA_DIR = ".tmp/3y_data"
 OUTPUT_FILE = "universe_backtest_results.csv"
 
 def analyze_symbol(filepath):
-    symbol = os.path.basename(filepath).replace("_3Y.csv", "")
+    symbol = os.path.basename(filepath).replace("_5Y.csv", "")
     try:
         df = pd.read_csv(filepath)
         
@@ -163,7 +163,7 @@ def analyze_symbol(filepath):
         return None
 
 def main():
-    files = glob.glob(os.path.join(DATA_DIR, "*_3Y.csv"))
+    files = glob.glob(os.path.join(DATA_DIR, "*_5Y.csv"))
     logger.info(f"Found {len(files)} files. Starting Split-Adjusted Sigma Analysis...")
     
     results = []

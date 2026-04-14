@@ -43,7 +43,7 @@ def get_last_tuesday(year, month):
 
 def load_futures_data(symbol):
     """Load raw futures data with expiry info."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     
@@ -180,10 +180,10 @@ def scan_live_convergence(threshold_pct=0.5):
     
     results = []
     data_dir = DATA_DIR
-    files = [f for f in os.listdir(data_dir) if f.endswith('_3Y.csv')]
+    files = [f for f in os.listdir(data_dir) if f.endswith('_5Y.csv')]
     
     for fname in sorted(files):
-        symbol = fname.replace('_3Y.csv', '')
+        symbol = fname.replace('_5Y.csv', '')
         df = load_futures_data(symbol)
         if df is None or 'FH_UNDERLYING_VALUE' not in df.columns:
             continue
@@ -257,11 +257,11 @@ def run_backtest(threshold_pct=0.5, entry_days=5):
     print("═" * 80)
     
     all_trades = []
-    files = [f for f in os.listdir(DATA_DIR) if f.endswith('_3Y.csv')]
+    files = [f for f in os.listdir(DATA_DIR) if f.endswith('_5Y.csv')]
     
     symbols_tested = 0
     for fname in sorted(files):
-        symbol = fname.replace('_3Y.csv', '')
+        symbol = fname.replace('_5Y.csv', '')
         df = load_futures_data(symbol)
         if df is None:
             continue

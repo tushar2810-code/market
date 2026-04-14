@@ -70,7 +70,7 @@ SECTORS = {
 
 def load_continuous_prices(symbol):
     """Load continuous futures prices (nearest expiry). Returns Series or None."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     
@@ -259,10 +259,10 @@ def main():
     # Load all available prices
     print(f"\n  Loading price data...")
     all_prices = {}
-    all_files = [f for f in os.listdir(DATA_DIR) if f.endswith('_3Y.csv')]
+    all_files = [f for f in os.listdir(DATA_DIR) if f.endswith('_5Y.csv')]
     
     for f in all_files:
-        sym = f.replace('_3Y.csv', '')
+        sym = f.replace('_5Y.csv', '')
         prices = load_continuous_prices(sym)
         if prices is not None and len(prices) >= args.min_data:
             all_prices[sym] = prices

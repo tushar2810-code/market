@@ -25,7 +25,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '.tmp', '3y_data')
 
 def load_continuous(symbol):
     """Load historical data and return continuous series."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None, f"FILE NOT FOUND: {path}"
 
@@ -244,7 +244,7 @@ def main():
 
     swap_symbols = ['LUPIN', 'POWERGRID', 'DRREDDY', 'AUROPHARMA', 'IRFC', 'NHPC', 'NTPC']
     for sym in swap_symbols:
-        path = os.path.join(DATA_DIR, f"{sym}_3Y.csv")
+        path = os.path.join(DATA_DIR, f"{sym}_5Y.csv")
         if not os.path.exists(path):
             print(f"  {sym:>12s}: ** NO DATA FILE **")
             continue

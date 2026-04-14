@@ -21,7 +21,7 @@ DATA_DIR = Path('.tmp/3y_data')
 
 
 def load(sym):
-    df = pd.read_csv(DATA_DIR / f'{sym}_3Y.csv')
+    df = pd.read_csv(DATA_DIR / f'{sym}_5Y.csv')
     df['FH_TIMESTAMP'] = pd.to_datetime(df['FH_TIMESTAMP'], format='%d-%b-%Y', errors='coerce')
     df = df.dropna(subset=['FH_TIMESTAMP']).sort_values('FH_TIMESTAMP')
     df = df.drop_duplicates('FH_TIMESTAMP', keep='last').set_index('FH_TIMESTAMP')

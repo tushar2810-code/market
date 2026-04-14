@@ -121,7 +121,7 @@ def load_historical_data(symbol, max_staleness_days=3):
            Single-stock split detection caused false positives on market crashes
            (e.g., Jun 4 2024 election crash flagged BOB as 'split').
     """
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     

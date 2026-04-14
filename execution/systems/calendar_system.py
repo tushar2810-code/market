@@ -41,7 +41,7 @@ import pandas as pd
 import numpy as np
 import os
 
-DATA_DIR        = '.tmp/3y_data'
+DATA_DIR        = '.tmp/5y_data'
 WINDOW          = 40
 Z_ENTRY         = 2.0     # Lower than pairs — calendar signals are cleaner
 Z_EXIT          = 0.3
@@ -68,7 +68,7 @@ def load_calendar_data(symbol):
     near_expiry, dte, spread, lot.
     Only works for NSE bhav data (has multiple rows per date for different expiries).
     """
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     df = pd.read_csv(path)

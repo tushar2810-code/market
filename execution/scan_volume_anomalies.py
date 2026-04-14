@@ -194,7 +194,7 @@ def run_volume_scan(date_str: str = None, lookback_days: int = 25,
     # Use the 3Y futures data directory as the canonical FNO symbol list
     fno_data_dir = Path('.tmp/3y_data')
     if fno_data_dir.exists():
-        fno_symbols = {f.stem.replace('_3Y', '') for f in fno_data_dir.glob('*_3Y.csv')}
+        fno_symbols = {f.stem.replace('_3Y', '') for f in fno_data_dir.glob('*_5Y.csv')}
         before = len(df_all['SYMBOL'].unique())
         df_all = df_all[df_all['SYMBOL'].isin(fno_symbols)]
         after = len(df_all['SYMBOL'].unique())

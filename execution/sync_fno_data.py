@@ -144,7 +144,7 @@ def download_symbol(symbol):
                     combined = combined.drop_duplicates(subset=['FH_TIMESTAMP', 'FH_EXPIRY_DT', 'FH_SYMBOL'])
                 
                 os.makedirs(DATA_DIR, exist_ok=True)
-                out_path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+                out_path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
                 combined.to_csv(out_path, index=False)
                 logger.info(f"✓ Saved {symbol} ({len(combined)} rows)")
                 return True
@@ -173,12 +173,12 @@ def run_sync(symbols=None, max_workers=4):
 # --- Verification ---
 def verify_integrity():
     logger.info("Verifying data integrity...")
-    files = glob.glob(os.path.join(DATA_DIR, "*_3Y.csv"))
+    files = glob.glob(os.path.join(DATA_DIR, "*_5Y.csv"))
     
     issues = []
     
     for f in sorted(files):
-        symbol = os.path.basename(f).replace('_3Y.csv', '')
+        symbol = os.path.basename(f).replace('_5Y.csv', '')
         try:
             df = pd.read_csv(f)
             if df.empty:

@@ -86,7 +86,7 @@ MIN_WINDOWS_CONFIRMING  = 2       # Z must reach entry_z in this many windows
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _load_csv(sym: str):
-    path = DATA_DIR / f'{sym}_3Y.csv'
+    path = DATA_DIR / f'{sym}_5Y.csv'
     if not path.exists():
         return None
     df = pd.read_csv(path)

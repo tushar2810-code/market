@@ -151,7 +151,7 @@ def load_historical(symbol, max_staleness_trading_days=MAX_STALENESS_TRADING_DAY
     BUG FIX #1: Uses trading days (Mon-Fri) for staleness, not calendar days.
     Friday data on Monday = 0 trading days stale (was 3 calendar days before!).
     """
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         logger.warning(f"{symbol}: Data file not found at {path}")
         return None

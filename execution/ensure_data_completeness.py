@@ -173,7 +173,7 @@ def download_year_by_year(downloader, symbol, output_dir, start_year=2015):
             combined_df.sort_values('__sort_date', inplace=True)
             combined_df.drop(columns=['__sort_date'], inplace=True)
             
-        final_path = os.path.join(output_dir, f"{symbol}_3Y.csv")
+        final_path = os.path.join(output_dir, f"{symbol}_5Y.csv")
         combined_df.to_csv(final_path, index=False)
         return final_path
         
@@ -196,7 +196,7 @@ def ensure_completeness():
     
     # First pass: Identify who needs update
     for symbol in FNO_SYMBOLS:
-        fname = f"{symbol}_3Y.csv"
+        fname = f"{symbol}_5Y.csv"
         fpath = os.path.join(DATA_DIR, fname)
         
         needs_update = False
@@ -234,7 +234,7 @@ def ensure_completeness():
             download_by_expiry.main(symbol, start_year=2023)
             
             # Verify result
-            final_path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+            final_path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
             if os.path.exists(final_path) and os.path.getsize(final_path) > 10000:
                 logger.info(f"✓ Migrated {symbol}")
                 success_count += 1

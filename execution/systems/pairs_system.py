@@ -30,7 +30,7 @@ import pandas as pd
 import numpy as np
 import os
 
-DATA_DIR        = '.tmp/3y_data'
+DATA_DIR        = '.tmp/5y_data'
 Z_ENTRY         = 2.5      # default; overridden by run() / sss_threshold replaces this
 Z_EXIT          = 0.3      # overridden by run() parameter
 TIME_STOP_DAYS  = 30
@@ -70,7 +70,7 @@ def get_lot(symbol, date):
 
 def load_ohlc(symbol):
     """Load daily OHLC + lot series with historical lot patching."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     df = pd.read_csv(path)
@@ -163,13 +163,16 @@ def get_modifier(pair_modifiers: dict, key: tuple) -> float:
 
 # ── Signal precomputation ─────────────────────────────────────────────────────
 
-def precompute_signals(price_data: dict, universe: list) -> dict:
+def precompute_signals(price_data: dict, universe: list,
+                       corp_actions: dict = None) -> dict:
     """
     Precompute for every pair: daily Z-score, SSS inputs, blackout flags.
 
     universe: list of (sym_a, sym_b, lots_a, lots_b)
+    corp_actions: {ticker: [(date, factor)]} for split/bonus blackout
     Returns dict keyed by (sym_a, sym_b).
     """
+    _corp = corp_actions or {}
     signals = {}
     for sym_a, sym_b, lots_a, lots_b in universe:
         if sym_a not in price_data or sym_b not in price_data:
@@ -197,13 +200,20 @@ def precompute_signals(price_data: dict, universe: list) -> dict:
         ret_b  = pb.pct_change()
         corr   = ret_a.rolling(WINDOW).corr(ret_b).clip(0, 1)
 
-        # Blackout: WINDOW days after any lot change
+        # Blackout: WINDOW days after any lot change or corporate action
         lc       = ((la != la.shift(1)) & la.notna() & la.shift(1).notna()) | \
                    ((lb != lb.shift(1)) & lb.notna() & lb.shift(1).notna())
         blackout = pd.Series(False, index=common)
         for chg in common[lc]:
             idx = common.get_loc(chg)
             blackout.iloc[idx:min(idx + WINDOW, len(common))] = True
+
+        # Also blackout around split/bonus dates (price data corrupted)
+        for sym in (sym_a, sym_b):
+            for action_date, _ in _corp.get(sym, []):
+                if action_date in common:
+                    idx = common.get_loc(action_date)
+                    blackout.iloc[idx:min(idx + WINDOW, len(common))] = True
 
         signals[(sym_a, sym_b)] = {
             'z': z, 'mean': mean, 'std': std,

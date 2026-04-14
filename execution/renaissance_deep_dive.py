@@ -71,7 +71,7 @@ DATA_DIR = '.tmp/3y_data'
 
 def load_data(symbol):
     """Load historical futures data and build continuous series."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         print(f"  ❌ Data file not found: {path}")
         return None

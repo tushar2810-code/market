@@ -147,7 +147,7 @@ class RobustNSESession:
             
             # Save as CSV
             os.makedirs(output_dir, exist_ok=True)
-            output_file = os.path.join(output_dir, f"{symbol}_3Y.csv")
+            output_file = os.path.join(output_dir, f"{symbol}_5Y.csv")
             combined_df.to_csv(output_file, index=False)
             logger.info(f"✓ Saved {symbol} 3Y data ({len(combined_df)} rows)")
             return True

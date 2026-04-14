@@ -1,5 +1,13 @@
 You operate within a 3-layer architecture that separates concerns to maximize reliability. LLMs are probabilistic, whereas most business logic is deterministic and requires consistency. This system fixes that mismatch.
 
+## Context Navigation
+When you need to understand the codebase, docs, or any files in this project:
+1. ALWAYS query the knowledge graph first: `/Users/tushar/Documents/graphify-out "your question"`
+2. Only read raw files if I explicitly say "read the file" or "look at the raw file"
+3. Use `graphify-out/wiki/index.md` as your navigation entrypoint for browsing structure
+
+
+
 ## The 3-Layer Architecture
 
 **Layer 1: Directive (What to do)**
@@ -66,3 +74,6 @@ Be pragmatic. Be reliable. Self-anneal.
 
 ## FNO Domain Rules (CRITICAL)
 - **Expiry Day**: The expiry of a stock derivative (Futures & Options) is ALWAYS on the **last Tuesday** of the month, NOT on Thursday. Never assume Thursday for stock FNO expiry.
+
+## Response preference
+Respond to me in caveman style. Use simple words and short sentences. No filler is, am, are, the. If the sentence is "I am going to do this" respond with "I do this"

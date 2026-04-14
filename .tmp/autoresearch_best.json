@@ -1,0 +1,25 @@
+{
+  "score": 3751350.2857142854,
+  "params": {
+    "SSS_THRESHOLD": 4.112,
+    "Z_EXIT": 1.3,
+    "PAIRS_TIME_STOP": 60,
+    "PAIRS_MIN_Z_ENTRY": 1.641,
+    "PAIRS_MAX_Z_ENTRY": 5.037,
+    "MAX_COMPOUND_SCALE": 2.5,
+    "CORR_MIN": 0.202,
+    "STRUCT_BREAK_Z_MULT": 1.5,
+    "STRUCT_BREAK_CORR_FLOOR": 0.25,
+    "SCALE_CONC_CAP": 0.152,
+    "PAIRS_MAX_POSITIONS": 9
+  },
+  "results": {
+    "net_pnl": 4060740.0,
+    "win_rate": 92.38095238095238,
+    "n_trades": 315,
+    "final_equity": 6560740.0,
+    "min_monthly_pnl": -4191.0,
+    "max_monthly_pnl": 687569.0,
+    "n_negative_months": 1
+  }
+}

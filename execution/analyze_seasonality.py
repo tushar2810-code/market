@@ -65,8 +65,8 @@ def load_nifty_returns() -> pd.DataFrame:
     Falls back to using multiple stocks if Nifty futures not available.
     """
     # Try to load Nifty index directly
-    nifty_path = DATA_DIR / "NIFTY_3Y.csv"
-    banknifty_path = DATA_DIR / "BANKNIFTY_3Y.csv"
+    nifty_path = DATA_DIR / "NIFTY_5Y.csv"
+    banknifty_path = DATA_DIR / "BANKNIFTY_5Y.csv"
 
     # Try loading a broad market proxy using large-cap stocks
     proxy_symbols = ['RELIANCE', 'HDFCBANK', 'ICICIBANK', 'INFY', 'TCS',
@@ -74,7 +74,7 @@ def load_nifty_returns() -> pd.DataFrame:
 
     frames = []
     for sym in proxy_symbols:
-        path = DATA_DIR / f"{sym}_3Y.csv"
+        path = DATA_DIR / f"{sym}_5Y.csv"
         if not path.exists():
             continue
         try:

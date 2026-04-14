@@ -44,7 +44,7 @@ SECTORS = {
 
 def load_prices(symbol):
     """Load continuous futures prices."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     try:

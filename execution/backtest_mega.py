@@ -55,16 +55,10 @@ CAL_Z_ENTRY        = 2.0
 CAL_Z_EXIT         = 0.3
 CAL_TIME_STOP      = 15
 CAL_DAYS_BEFORE_EXP= 5
-CALENDAR_SYMBOLS   = [
-    ('SAIL',       4700, 1),
-    ('HINDUNILVR',  300, 1),
-    ('COLPAL',      225, 1),
-    ('ITC',        1600, 1),
-    ('OBEROIRLTY',  350, 1),
-]
+CALENDAR_MAX_POSITIONS = 8   # max concurrent calendar positions (capital gates the rest)
 
 # Pairs
-PAIRS_TIME_STOP    = 5       # Data shows: if not reverted in 5d, 0% WR. Cut fast.
+PAIRS_TIME_STOP    = 30      # Backstop only — structural break is primary exit
 PAIRS_MAX_POSITIONS= 8
 PAIRS_MAX_Z_ENTRY  = 4.0      # |Z| > 4 at discovery = skip (likely already broken)
 PAIRS_MIN_Z_ENTRY  = 1.5      # |Z| < 1.5 = not stretched enough, just noise
@@ -77,9 +71,110 @@ UNIVERSE_MAX_PAIRS = 60
 # Risk management
 DRAWDOWN_THRESHOLD = -0.05    # -5% daily drawdown triggers pause
 DRAWDOWN_PAUSE_DAYS= 3        # pause new entries for N business days
-COOLDOWN_TIMESTOP  = 5        # bdays cooldown after time stop (pair didn't revert)
+COOLDOWN_TIMESTOP  = 3        # bdays cooldown after time stop
 MAX_COMPOUND_SCALE = 2.5      # max lot scaling from compounding
 CHARGE_RATE        = 0.12     # 12% of |gross| as charges
+CORR_MIN           = 0.3     # min 60d correlation to enter a pair
+SCALE_CONC_CAP     = 0.15    # concentration cap for compounding scale calc
+STRUCT_BREAK_Z_MULT     = 1.5   # exit if |Z| > 1.5x entry |Z| after 5 days
+STRUCT_BREAK_CORR_FLOOR = 0.25  # exit if 60d correlation < 0.25
+
+
+# ── AutoResearch: override constants from params.json if it exists ───────────
+_params_file = os.path.join(os.path.dirname(__file__), 'params.json')
+_AR_MODE = False
+if os.path.exists(_params_file):
+    import json as _json
+    with open(_params_file) as _f:
+        _AR = _json.load(_f)
+    _AR_MODE = True
+    SSS_THRESHOLDS       = [_AR.get('SSS_THRESHOLD', SSS_THRESHOLDS[0])]
+    PAIRS_Z_EXITS        = [_AR.get('Z_EXIT', PAIRS_Z_EXITS[0])]
+    PAIRS_TIME_STOP      = _AR.get('PAIRS_TIME_STOP', PAIRS_TIME_STOP)
+    PAIRS_MIN_Z_ENTRY    = _AR.get('PAIRS_MIN_Z_ENTRY', PAIRS_MIN_Z_ENTRY)
+    PAIRS_MAX_Z_ENTRY    = _AR.get('PAIRS_MAX_Z_ENTRY', PAIRS_MAX_Z_ENTRY)
+    PAIRS_MAX_POSITIONS  = _AR.get('PAIRS_MAX_POSITIONS', PAIRS_MAX_POSITIONS)
+    MAX_COMPOUND_SCALE   = _AR.get('MAX_COMPOUND_SCALE', MAX_COMPOUND_SCALE)
+    REFRESH_INTERVAL     = _AR.get('REFRESH_INTERVAL', REFRESH_INTERVAL)
+    CORR_MIN             = _AR.get('CORR_MIN', CORR_MIN)
+    SCALE_CONC_CAP       = _AR.get('SCALE_CONC_CAP', SCALE_CONC_CAP)
+    STRUCT_BREAK_Z_MULT  = _AR.get('STRUCT_BREAK_Z_MULT', STRUCT_BREAK_Z_MULT)
+    STRUCT_BREAK_CORR_FLOOR = _AR.get('STRUCT_BREAK_CORR_FLOOR', STRUCT_BREAK_CORR_FLOOR)
+    print(f"  [AutoResearch] Loaded params from {_params_file}")
+
+
+# ── Corporate actions ────────────────────────────────────────────────────────
+
+import re as _re
+
+def load_corporate_actions():
+    """Parse nse_perfect_actions.csv → {ticker: [(date, factor)]} for splits/bonuses.
+    factor = how many post-action shares equal 1 pre-action share.
+    """
+    actions_file = '.tmp/nse_perfect_actions.csv'
+    if not os.path.exists(actions_file):
+        print("  [WARN] No nse_perfect_actions.csv found — skipping corp action adjustment")
+        return {}
+
+    import csv
+    raw = {}  # ticker → [(date, factor)]
+    with open(actions_file) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            typ = row['Type'].strip()
+            if typ not in ('Split', 'Bonus'):
+                continue
+            desc = row['Description'].strip()
+
+            # Skip non-equity bonus (e.g. NCRPS preference shares)
+            if 'Ncrps' in desc or 'ncrps' in desc or 'NCRPS' in desc:
+                continue
+
+            ticker = row['Ticker'].strip()
+            date = pd.Timestamp(row['Date'].strip())
+            factor = 1.0
+
+            if typ == 'Split':
+                # "From Rs X/- Per Share To Re Y/- Per Share"
+                m = _re.findall(r'R[se]\s*([\d.]+)', desc)
+                if len(m) >= 2:
+                    factor = float(m[0]) / float(m[1])
+            elif typ == 'Bonus':
+                # "Bonus A:B" → (A+B)/B shares per original share
+                m = _re.search(r'Bonus\s+(\d+):(\d+)', desc)
+                if m:
+                    a, b = int(m.group(1)), int(m.group(2))
+                    factor = (a + b) / b
+
+            if factor > 1.0:
+                raw.setdefault(ticker, []).append((date, factor))
+
+    # Sort by date and combine same-date actions (multiply factors)
+    result = {}
+    for ticker, actions in raw.items():
+        actions.sort(key=lambda x: x[0])
+        combined = []
+        for date, factor in actions:
+            if combined and combined[-1][0] == date:
+                combined[-1] = (date, combined[-1][1] * factor)
+            else:
+                combined.append((date, factor))
+        result[ticker] = combined
+
+    n_actions = sum(len(v) for v in result.values())
+    print(f"  Loaded {n_actions} corporate actions (splits/bonuses) for {len(result)} tickers")
+    return result
+
+
+def get_adj_factor(corp_actions, ticker, entry_date, exit_date):
+    """Cumulative adjustment factor for all actions between entry and exit dates."""
+    if ticker not in corp_actions:
+        return 1.0
+    factor = 1.0
+    for action_date, f in corp_actions[ticker]:
+        if entry_date < action_date <= exit_date:
+            factor *= f
+    return factor
 
 
 # ── Data loading ─────────────────────────────────────────────────────────────
@@ -99,9 +194,13 @@ def load_all_prices():
 
 
 def precompute_calendar():
-    """Precompute calendar signals for Tier 1 symbols."""
+    """Precompute calendar signals for ALL symbols with NSE bhav multi-expiry data."""
+    data_dir = '.tmp/3y_data'
     cal = {}
-    for sym, lot_fallback, contracts in CALENDAR_SYMBOLS:
+    for f in sorted(os.listdir(data_dir)):
+        if not f.endswith('_3Y.csv'):
+            continue
+        sym = f.replace('_3Y.csv', '')
         raw = load_calendar_data(sym)
         if raw is None:
             continue
@@ -110,7 +209,7 @@ def precompute_calendar():
                      (data.index <= BACKTEST_END)]
         if data.empty or data['z'].notna().sum() < 5:
             continue
-        cal[sym] = dict(data=data, lot_fallback=lot_fallback, contracts=contracts)
+        cal[sym] = dict(data=data)
     return cal
 
 
@@ -158,11 +257,19 @@ def discover_universes(price_data, trading_days):
 
 def run_unified(pair_signals, cal_signals,
                 refresh_points, universe_at,
-                sss_threshold, z_exit, starting_cap):
+                sss_threshold, z_exit, starting_cap,
+                time_stop=None,             # None → use module default
+                start=None, end=None,       # date range override for walk-forward
+                corp_actions=None):         # corporate actions dict
     """
     Run ONE grid combo through the unified day loop.
     Both pairs and calendar share a single CapitalTracker.
     """
+    _time_stop   = time_stop if time_stop is not None else PAIRS_TIME_STOP
+    _start       = pd.Timestamp(start) if start is not None else BACKTEST_START
+    _end         = pd.Timestamp(end)   if end   is not None else BACKTEST_END
+    _corp        = corp_actions if corp_actions is not None else {}
+
     cap = CapitalTracker(starting_cap)
     pair_positions = {}    # (sym_a, sym_b) → position dict
     cal_positions  = {}    # symbol → position dict
@@ -171,7 +278,7 @@ def run_unified(pair_signals, cal_signals,
     cooldowns      = {}    # (sym_a, sym_b) → bday index when cooldown expires
     drawdown_pause_until = -1
 
-    trading_days = pd.bdate_range(BACKTEST_START, BACKTEST_END)
+    trading_days = pd.bdate_range(_start, _end)
     equity = pd.Series(starting_cap, index=trading_days, dtype=float)
     prev_equity = starting_cap
 
@@ -289,48 +396,83 @@ def run_unified(pair_signals, cal_signals,
             entry_z   = pos['entry_z']
             scale     = pos['scale']
 
-            # Lot change → force exit
-            lot_changed = sig['blackout'].get(dt, False) and \
-                          (cur_ma != entry_ma or cur_mb != entry_mb)
+            # Corporate action adjustment: if split/bonus happened since entry,
+            # raw prices dropped by factor — adjust to pre-split equivalent
+            adj_a = get_adj_factor(_corp, sym_a, pos['entry_date'], dt)
+            adj_b = get_adj_factor(_corp, sym_b, pos['entry_date'], dt)
+            cur_pa_adj  = cur_pa * adj_a
+            cur_pb_adj  = cur_pb * adj_b
+            pa_hi_adj   = pa_hi * adj_a
+            pa_lo_adj   = pa_lo * adj_a
+            pb_hi_adj   = pb_hi * adj_b
+            pb_lo_adj   = pb_lo * adj_b
 
-            # Intraday best-case spread
+            # If lots changed or corp action happened, rolling mean/std are
+            # contaminated (spread series jumped). Use entry-time stats.
+            lots_changed = (cur_ma != entry_ma or cur_mb != entry_mb)
+            has_action   = (adj_a != 1.0 or adj_b != 1.0)
+            use_entry_stats = lots_changed or has_action
+            ref_mean = pos['entry_mean'] if use_entry_stats else cur_mean
+            ref_std  = pos['entry_std']  if use_entry_stats else cur_std
+            if pd.isna(ref_std) or ref_std == 0:
+                continue
+
+            # Recompute Z on consistent basis (entry lots + adjusted prices)
+            if use_entry_stats:
+                cur_spread_adj = cur_pa_adj * entry_ma - cur_pb_adj * entry_mb
+                cur_z_adj = (cur_spread_adj - ref_mean) / ref_std
+            else:
+                cur_z_adj = cur_z
+
+            # Intraday best-case spread (entry lots + adjusted prices)
             if direction == +1:   # BUY_A
-                best_sp = pa_hi * entry_ma - pb_lo * entry_mb
+                best_sp = pa_hi_adj * entry_ma - pb_lo_adj * entry_mb
                 intr_pa, intr_pb = pa_hi, pb_lo
             else:                 # SELL_A
-                best_sp = pa_lo * entry_ma - pb_hi * entry_mb
+                best_sp = pa_lo_adj * entry_ma - pb_hi_adj * entry_mb
                 intr_pa, intr_pb = pa_lo, pb_hi
-            best_z = (best_sp - cur_mean) / cur_std
+            best_z = (best_sp - ref_mean) / ref_std
 
             # Only count Z-based exits if Z has actually moved TOWARD 0 vs entry
             # (prevents "already past exit on entry" false triggers)
-            z_reverted = abs(cur_z) < abs(entry_z)
+            z_reverted = abs(cur_z_adj) < abs(entry_z)
 
             intraday_hit = z_reverted and (
                 (direction == +1 and best_z >= -z_exit) or
                 (direction == -1 and best_z <=  z_exit))
             eod_hit      = z_reverted and (
-                (direction == +1 and cur_z  >= -z_exit) or
-                (direction == -1 and cur_z  <=  z_exit))
+                (direction == +1 and cur_z_adj >= -z_exit) or
+                (direction == -1 and cur_z_adj <=  z_exit))
 
-            # No separate structural break detection — the 5-day time stop IS the
-            # structural break exit. Data proves: 0% WR after 5 days = cut fast.
+            # Lot changes only affect NEW contracts — existing positions hold their
+            # original contract unchanged. No forced exit on lot change.
 
             reason = None
-            if lot_changed:              reason = 'LOT_CHANGE'
-            elif intraday_hit:
+            # 1. Z-based profit exit (spread reverted)
+            if intraday_hit:
                 reason = 'INTRADAY' if not eod_hit else 'PROFIT'
-            elif days >= PAIRS_TIME_STOP: reason = 'TIME_STOP'
+            # 2. Structural break detection (primary loss exit)
+            elif days >= 3:
+                corr_now = sig['corr'].get(dt, 1.0)
+                corr_now = max(0.0, float(corr_now)) if not pd.isna(corr_now) else 1.0
+                corr_break  = corr_now < STRUCT_BREAK_CORR_FLOOR
+                z_amplified = abs(cur_z_adj) > abs(entry_z) * STRUCT_BREAK_Z_MULT
+                if corr_break or z_amplified:
+                    reason = 'STRUCT_BREAK'
+            # 3. TIME_STOP as long backstop only
+            if reason is None and days >= _time_stop:
+                reason = 'TIME_STOP'
 
             if reason:
+                # Adjust exit prices for corporate actions (pre-split equivalent)
                 if reason == 'INTRADAY':
-                    exit_pa = (intr_pa + cur_pa) / 2
-                    exit_pb = (intr_pb + cur_pb) / 2
+                    exit_pa = (intr_pa * adj_a + cur_pa_adj) / 2
+                    exit_pb = (intr_pb * adj_b + cur_pb_adj) / 2
                 else:
-                    exit_pa, exit_pb = cur_pa, cur_pb
+                    exit_pa, exit_pb = cur_pa_adj, cur_pb_adj
 
-                scaled_ma = int(entry_ma * scale)
-                scaled_mb = int(entry_mb * scale)
+                scaled_ma = int(round(entry_ma * scale))
+                scaled_mb = int(round(entry_mb * scale))
                 gross = direction * (exit_pa * scaled_ma - exit_pb * scaled_mb
                                      - pos['entry_pa'] * scaled_ma
                                      + pos['entry_pb'] * scaled_mb)
@@ -341,7 +483,7 @@ def run_unified(pair_signals, cal_signals,
                     pair=f"{sym_a}/{sym_b}", strategy='PAIRS',
                     entry_date=pos['entry_date'], exit_date=dt, days=days,
                     direction='BUY_A' if direction == +1 else 'SELL_A',
-                    entry_z=round(entry_z, 3), exit_z=round(cur_z, 3),
+                    entry_z=round(entry_z, 3), exit_z=round(cur_z_adj, 3),
                     gross=round(gross, 0), charges=round(chg, 0),
                     net=round(net, 0), reason=reason, win=net > 0,
                     shares_a=int(scaled_ma), shares_b=int(scaled_mb),
@@ -352,8 +494,8 @@ def run_unified(pair_signals, cal_signals,
                 # Self-annealing
                 _update_modifier(pair_modifiers, key, net > 0)
 
-                # Cooldown after time stop (pair didn't revert — give it space)
-                if reason == 'TIME_STOP':
+                # Cooldown after forced exit (pair didn't revert — give it space)
+                if reason in ('TIME_STOP', 'STRUCT_BREAK'):
                     cooldowns[key] = day_idx + COOLDOWN_TIMESTOP
 
         for key in pair_to_close:
@@ -365,23 +507,30 @@ def run_unified(pair_signals, cal_signals,
 
         if not is_paused:
 
-            # ── Calendar entries (priority — higher WR) ──────────────────
-            for sym, cfg in cal_signals.items():
-                if sym in cal_positions:
-                    continue
-                if dt not in cfg['data'].index:
-                    continue
-                row = cfg['data'].loc[dt]
-                z   = row['z']
-                if pd.isna(z) or pd.isna(row.get('std')) or row.get('std', 0) == 0:
-                    continue
-                dte = row['dte']
-                if abs(z) >= CAL_Z_ENTRY and dte > CAL_DAYS_BEFORE_EXP + 2:
-                    lot = int(row['lot']) if not pd.isna(row['lot']) and row['lot'] > 0 \
-                          else cfg['lot_fallback']
-                    # Compounding: scale contracts
+            # ── Calendar entries (ranked by |Z|, capital gated) ──────────
+            if len(cal_positions) < CALENDAR_MAX_POSITIONS:
+                cal_candidates = []
+                for sym, cfg in cal_signals.items():
+                    if sym in cal_positions:
+                        continue
+                    if dt not in cfg['data'].index:
+                        continue
+                    row = cfg['data'].loc[dt]
+                    z   = row['z']
+                    if pd.isna(z) or pd.isna(row.get('std')) or row.get('std', 0) == 0:
+                        continue
+                    dte = row['dte']
+                    if abs(z) >= CAL_Z_ENTRY and dte > CAL_DAYS_BEFORE_EXP + 2:
+                        cal_candidates.append((abs(z), sym, row))
+                cal_candidates.sort(reverse=True)
+
+                for _, sym, row in cal_candidates:
+                    if len(cal_positions) >= CALENDAR_MAX_POSITIONS:
+                        break
+                    z   = row['z']
+                    lot = int(row['lot']) if not pd.isna(row['lot']) and row['lot'] > 0 else 1
                     scale = cap.scale_factor(MAX_COMPOUND_SCALE)
-                    actual_contracts = max(1, round(cfg['contracts'] * scale))
+                    actual_contracts = max(1, round(scale))
                     margin = (abs(row['near']) + abs(row['far'])) * lot * actual_contracts * 0.15
                     if cap.can_open(margin):
                         cap.commit(f'CAL_{sym}', margin)
@@ -423,6 +572,10 @@ def run_unified(pair_signals, cal_signals,
                         continue
                     corr_60d = max(0.0, float(corr_60d))
 
+                    # Fix D: correlation gate — uncorrelated pair is not a valid hedge
+                    if corr_60d < CORR_MIN:
+                        continue
+
                     if abs(cur_z) > PAIRS_MAX_Z_ENTRY:
                         continue
                     if abs(cur_z) < PAIRS_MIN_Z_ENTRY:
@@ -459,13 +612,30 @@ def run_unified(pair_signals, cal_signals,
                     if pd.isna(cur_ma) or pd.isna(cur_mb):
                         continue
 
-                    # Compounding: scale position by capital growth
-                    scale     = cap.scale_factor(MAX_COMPOUND_SCALE)
-                    scaled_ma = int(cur_ma * scale)
-                    scaled_mb = int(cur_mb * scale)
+                    # Fix E: Hedge ratio check on BASE (unscaled) notionals
+                    notional_a_base = cur_pa * cur_ma
+                    notional_b_base = cur_pb * cur_mb
+                    if min(notional_a_base, notional_b_base) > 0:
+                        ratio = max(notional_a_base, notional_b_base) / min(notional_a_base, notional_b_base)
+                        if ratio > 1.5:
+                            continue  # hedge ratio drifted — not cash-neutral
+
+                    # Notional-aware compounding
+                    scale_by_capital  = cap.scale_factor(MAX_COMPOUND_SCALE)
+                    max_leg_notional  = cap.available * SCALE_CONC_CAP
+                    scale_by_notional = (max_leg_notional / notional_a_base
+                                         if notional_a_base > 0 else MAX_COMPOUND_SCALE)
+                    scale     = max(1.0, min(scale_by_capital, scale_by_notional,
+                                             MAX_COMPOUND_SCALE))
+                    scaled_ma = int(round(cur_ma * scale))
+                    scaled_mb = int(round(cur_mb * scale))
+
+                    # Notionals after scaling (for capital gate)
+                    notional_a = cur_pa * scaled_ma
+                    notional_b = cur_pb * scaled_mb
 
                     margin = cap.estimate_margin(cur_pa, cur_pb, scaled_ma, scaled_mb)
-                    if not cap.can_open(margin):
+                    if not cap.can_open(margin, notional_a, notional_b):
                         continue
                     cap.commit(key, margin)
 
@@ -473,6 +643,8 @@ def run_unified(pair_signals, cal_signals,
                         entry_date=dt, entry_z=cur_z,
                         entry_pa=cur_pa, entry_pb=cur_pb,
                         mult_a=cur_ma, mult_b=cur_mb,   # base (for Z calc)
+                        entry_mean=sig['mean'].get(dt),  # for lot-change Z fix
+                        entry_std=sig['std'].get(dt),    # for lot-change Z fix
                         direction=-1 if cur_z > 0 else +1,
                         scale=scale,                      # locked at entry
                     )
@@ -746,10 +918,13 @@ def main():
     print(f"  Universe refresh: every {REFRESH_INTERVAL} trading days")
     print(f"  Drawdown pause:   {DRAWDOWN_THRESHOLD*100:.0f}% daily -> {DRAWDOWN_PAUSE_DAYS}d pause")
     print(f"  Compounding cap:  {MAX_COMPOUND_SCALE}x")
-    print(f"  Max positions:    {PAIRS_MAX_POSITIONS} pairs + 5 calendar")
+    print(f"  Max positions:    {PAIRS_MAX_POSITIONS} pairs + {CALENDAR_MAX_POSITIONS} calendar")
     print(f"  Max utilisation:  70%")
     print(f"  Total combos:     {len(SSS_THRESHOLDS) * len(PAIRS_Z_EXITS)}")
     print("=" * 80)
+
+    # ── Load corporate actions ──────────────────────────────────────────
+    corp_actions = load_corporate_actions()
 
     # ── Load all data ────────────────────────────────────────────────────
     print("\n  Loading price data...")
@@ -761,16 +936,39 @@ def main():
     cal_signals = precompute_calendar()
     print(f"  Calendar symbols ready: {list(cal_signals.keys())}")
 
-    # ── Discover universes at refresh points ─────────────────────────────
+    # ── Discover universes at refresh points (cached for autoresearch) ───
+    import pickle
     trading_days = pd.bdate_range(BACKTEST_START, BACKTEST_END)
-    print(f"\n  Discovering co-integrated pairs (rolling {REFRESH_INTERVAL}d windows)...")
-    refresh_points, universe_at, all_tuples, raw_universes = \
-        discover_universes(price_data, trading_days)
-    print(f"  Total unique pairs across all windows: {len(all_tuples)}")
+    cache_file = '.tmp/cached_universes.pkl'
+    use_cache = _AR_MODE and os.path.exists(cache_file)
+
+    if use_cache:
+        print(f"\n  Loading cached universe discovery...")
+        with open(cache_file, 'rb') as _cf:
+            cached = pickle.load(_cf)
+        refresh_points = cached['refresh_points']
+        universe_at    = cached['universe_at']
+        all_tuples     = cached['all_tuples']
+        raw_universes  = cached['raw_universes']
+        print(f"  Loaded {len(all_tuples)} pairs from cache")
+    else:
+        print(f"\n  Discovering co-integrated pairs (rolling {REFRESH_INTERVAL}d windows)...")
+        refresh_points, universe_at, all_tuples, raw_universes = \
+            discover_universes(price_data, trading_days)
+        print(f"  Total unique pairs across all windows: {len(all_tuples)}")
+        # Cache for autoresearch
+        os.makedirs('.tmp', exist_ok=True)
+        with open(cache_file, 'wb') as _cf:
+            pickle.dump({
+                'refresh_points': refresh_points,
+                'universe_at': universe_at,
+                'all_tuples': all_tuples,
+                'raw_universes': raw_universes,
+            }, _cf)
 
     # ── Precompute pair signals for ALL discovered pairs ─────────────────
     print(f"\n  Precomputing pair signals for {len(all_tuples)} pairs...")
-    pair_signals = precompute_signals(price_data, all_tuples)
+    pair_signals = precompute_signals(price_data, all_tuples, corp_actions=corp_actions)
     print(f"  Pair signals ready: {len(pair_signals)} pairs")
 
     # ── Grid search ──────────────────────────────────────────────────────
@@ -793,6 +991,7 @@ def main():
                 refresh_points, universe_at,
                 sss_threshold=sss, z_exit=zex,
                 starting_cap=STARTING_CAP,
+                corp_actions=corp_actions,
             )
             if not df.empty:
                 df['entry_date'] = pd.to_datetime(df['entry_date'])
@@ -864,6 +1063,25 @@ def main():
         best_df.to_csv('.tmp/backtest_v6_trades.csv', index=False)
         print(f"  Trade log -> .tmp/backtest_v6_trades.csv")
     plot_all(grid_results, best_key, best_df, best_eq, refresh_points)
+
+    # AutoResearch: write machine-readable results
+    if _AR_MODE and not best_df.empty:
+        monthly_pnl = best_df.groupby(
+            pd.to_datetime(best_df['exit_date']).dt.to_period('M')
+        )['net'].sum()
+        ar_results = {
+            'net_pnl': float(s['net']),
+            'win_rate': float(100 * s['wr']),
+            'n_trades': int(s['n']),
+            'final_equity': float(s['yr2']),
+            'min_monthly_pnl': float(monthly_pnl.min()) if len(monthly_pnl) > 0 else 0,
+            'max_monthly_pnl': float(monthly_pnl.max()) if len(monthly_pnl) > 0 else 0,
+            'n_negative_months': int((monthly_pnl < 0).sum()),
+        }
+        import json as _json2
+        with open('.tmp/autoresearch_results.json', 'w') as _f2:
+            _json2.dump(ar_results, _f2, indent=2)
+        print(f"  AutoResearch results -> .tmp/autoresearch_results.json")
 
 
 if __name__ == '__main__':

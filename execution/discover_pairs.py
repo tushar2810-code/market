@@ -78,7 +78,7 @@ SECTOR_MAP = {
 
 def load_continuous_series(symbol):
     """Load historical data and build continuous futures series."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
 
@@ -285,8 +285,8 @@ def discover_pairs(sector_filter=None, fast_mode=False):
     # Check which symbols have data files
     available_files = set()
     for f in os.listdir(DATA_DIR):
-        if f.endswith('_3Y.csv'):
-            available_files.add(f.replace('_3Y.csv', ''))
+        if f.endswith('_5Y.csv'):
+            available_files.add(f.replace('_5Y.csv', ''))
 
     # Also add any symbols NOT in our sector map but with data (uncategorized)
     classified = set()

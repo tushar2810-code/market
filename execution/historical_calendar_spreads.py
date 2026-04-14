@@ -22,7 +22,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '.tmp', '3y_data')
 
 def load_futures_data(symbol):
     """Load raw futures data with all expiry months."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     df = pd.read_csv(path)
@@ -474,8 +474,8 @@ def _print_analysis(r):
 
 def scan_all():
     """Scan all symbols that have 3Y data and rank by opportunity."""
-    files = [f for f in os.listdir(DATA_DIR) if f.endswith('_3Y.csv')]
-    symbols = [f.replace('_3Y.csv', '') for f in files]
+    files = [f for f in os.listdir(DATA_DIR) if f.endswith('_5Y.csv')]
+    symbols = [f.replace('_5Y.csv', '') for f in files]
     print(f"\nFound {len(symbols)} symbols with historical data")
     print(f"Scanning for calendar spread opportunities...\n")
 

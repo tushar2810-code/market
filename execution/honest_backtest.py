@@ -28,7 +28,7 @@ DATA_DIR = '.tmp/3y_data'
 
 def load_and_validate(symbol, require_underlying=False):
     """Load data with strict validation. Returns None if data is bad."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     
@@ -102,9 +102,9 @@ def backtest_expiry_clean(threshold_pct=0.3, entry_days=5):
     files = sorted(os.listdir(DATA_DIR))
     
     for fname in files:
-        if not fname.endswith('_3Y.csv'):
+        if not fname.endswith('_5Y.csv'):
             continue
-        symbol = fname.replace('_3Y.csv', '')
+        symbol = fname.replace('_5Y.csv', '')
         
         df = load_and_validate(symbol, require_underlying=True)
         if df is None:

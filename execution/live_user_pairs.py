@@ -17,12 +17,12 @@ from datetime import datetime
 from shoonya_client import ShoonyaClient
 
 
-DATA_DIR = '.tmp/3y_data'
+DATA_DIR = '.tmp/5y_data'
 MAX_STALENESS_TRADING_DAYS = 3
 
 
 def load_continuous(symbol):
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         print(f"ERROR: No data file for {symbol}")
         return None
@@ -37,7 +37,8 @@ def load_continuous(symbol):
         print(f"WARNING: {symbol} data is {stale} trading days stale (last: {last_date.date()}) — results may be wrong")
 
     df['FH_EXPIRY_DT'] = pd.to_datetime(df['FH_EXPIRY_DT'], format='%d-%b-%Y', errors='coerce')
-    continuous = df.loc[df.groupby('FH_TIMESTAMP')['FH_EXPIRY_DT'].idxmin()].copy()
+    df_valid = df.dropna(subset=['FH_EXPIRY_DT'])
+    continuous = df_valid.loc[df_valid.groupby('FH_TIMESTAMP')['FH_EXPIRY_DT'].idxmin()].copy()
     continuous = continuous.sort_values('FH_TIMESTAMP')
     # Replace 0/NaN lot sizes with nearest valid
     continuous['FH_MARKET_LOT'] = continuous['FH_MARKET_LOT'].replace(0, np.nan).ffill().bfill()

@@ -45,7 +45,7 @@ NEAR_MISS_PAIRS = [
 
 def load_prices(symbol):
     """Load continuous futures prices."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     try:
@@ -164,10 +164,10 @@ def scan_pairs(capital):
 def scan_expiry_convergence_live():
     """Scan for expiry convergence opportunities."""
     signals = []
-    files = [f for f in os.listdir(DATA_DIR) if f.endswith('_3Y.csv')]
+    files = [f for f in os.listdir(DATA_DIR) if f.endswith('_5Y.csv')]
     
     for fname in sorted(files):
-        symbol = fname.replace('_3Y.csv', '')
+        symbol = fname.replace('_5Y.csv', '')
         path = os.path.join(DATA_DIR, fname)
         
         try:

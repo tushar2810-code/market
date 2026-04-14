@@ -1,2 +1,3 @@
-Timestamp,Pair,Strategy,Entry_Price_A,Entry_Price_B,Entry_Ratio,Entry_Z,Mean_Target,Pos_Size_A,Pos_Size_B,Status
-2026-02-10 11:39:29,SBIN/BANKBARODA,Mean Reversion (Short Ratio),1141.3,291.15,3.92,5.18,3.3906,-750,2925,OPEN
+Timestamp,Pair,Strategy,Entry_Price_A,Entry_Price_B,Entry_Ratio,Entry_Z,Mean_Target,Pos_Size_A,Pos_Size_B,Status,Exit_Price_A,Exit_Price_B,Net_PNL
+2026-02-10 11:39:29,SBIN/BANKBARODA,Mean Reversion (Short Ratio),1141.3,291.15,3.92,5.18,3.3906,-750,2925,OPEN,,,
+2026-04-13 12:51:00,BAJAJFINSV/MUTHOOTFIN,V6 Spread (Long Leg A),1781.0,3564.8,2:1,-3.42,-1.0,500,-275,CLOSED,1787.0,3540.0,-375.0

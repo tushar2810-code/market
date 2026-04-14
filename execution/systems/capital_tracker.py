@@ -14,6 +14,7 @@ Actual SEBI SPAN is typically 10-20%; 15% is a safe middle ground.
 
 MARGIN_RATE = 0.15   # 15% of notional as margin per leg
 MAX_UTILISATION = 0.70  # SYSTEM.md: max 70% capital deployed at any time
+MAX_NOTIONAL_PCT = 0.30  # No single leg > 30% of available capital (concentration cap)
 
 
 class CapitalTracker:
@@ -38,13 +39,22 @@ class CapitalTracker:
     def free_capital(self) -> float:
         return self.available - sum(self._committed.values())
 
-    def can_open(self, margin_needed: float) -> bool:
-        """Check both free capital AND 70% utilisation cap."""
+    def can_open(self, margin_needed: float,
+                 notional_a: float = 0, notional_b: float = 0) -> bool:
+        """
+        Check free capital, 70% utilisation cap, AND 30% notional concentration.
+        notional_a/b = price × shares for each leg (0 = skip check).
+        """
         if self.free_capital() < margin_needed:
             return False
         # SYSTEM.md: max 70% of capital deployed at any time
         new_committed = sum(self._committed.values()) + margin_needed
         if self.available > 0 and new_committed / self.available > MAX_UTILISATION:
+            return False
+        # Concentration cap: no single leg > 30% of available capital
+        if notional_a > 0 and notional_a > self.available * MAX_NOTIONAL_PCT:
+            return False
+        if notional_b > 0 and notional_b > self.available * MAX_NOTIONAL_PCT:
             return False
         return True
 
@@ -59,7 +69,7 @@ class CapitalTracker:
         Unlock margin and credit/debit realised P&L when a position closes.
         available_capital is updated here — it reflects actual cash position.
         """
-        margin = self._committed.pop(key, 0.0)
+        self._committed.pop(key, 0.0)
         self.available += net_pnl   # net_pnl already has charges deducted
 
     # ── Compounding ──────────────────────────────────────────────────────────

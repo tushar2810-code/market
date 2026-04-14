@@ -85,7 +85,7 @@ def get_lot_on_date(symbol, date):
 def load_near_month_series(symbol):
     """Load price series. Patches lot column with historically-accurate values."""
     import os
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     df = pd.read_csv(path)
     df.columns = [c.strip() for c in df.columns]
     df['date']  = pd.to_datetime(df['FH_TIMESTAMP'], format='%d-%b-%Y', errors='coerce')

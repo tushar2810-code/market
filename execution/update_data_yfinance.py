@@ -50,7 +50,7 @@ except Exception:
 
 def get_existing_lot(symbol: str) -> int:
     """Extract the last known lot size from existing CSV. Falls back to 1."""
-    path = DATA_DIR / f"{symbol}_3Y.csv"
+    path = DATA_DIR / f"{symbol}_5Y.csv"
     if not path.exists():
         return 1
     try:
@@ -104,7 +104,7 @@ def fetch_and_save(symbol: str) -> bool:
         out = df[[c for c in out_cols if c in df.columns]].dropna(subset=['FH_CLOSING_PRICE'])
         out = out.sort_values('FH_TIMESTAMP')
 
-        out_path = DATA_DIR / f"{symbol}_3Y.csv"
+        out_path = DATA_DIR / f"{symbol}_5Y.csv"
         out.to_csv(out_path, index=False)
         logger.info(f"{symbol}: {len(out)} rows  lot={lot}  → {out_path.name}")
         return True
@@ -171,7 +171,7 @@ def run(symbols: list) -> None:
                 ]
                 out = df_sym[[c for c in out_cols if c in df_sym.columns]].dropna(subset=['FH_CLOSING_PRICE'])
                 out = out.sort_values('FH_TIMESTAMP')
-                out_path = DATA_DIR / f"{sym}_3Y.csv"
+                out_path = DATA_DIR / f"{sym}_5Y.csv"
                 out.to_csv(out_path, index=False)
                 logger.info(f"{sym}: {len(out)} rows  lot={get_existing_lot(sym)}")
                 ok += 1

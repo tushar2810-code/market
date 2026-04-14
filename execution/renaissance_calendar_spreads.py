@@ -176,7 +176,7 @@ def get_futures(api, symbol):
 
 def load_spot_history(symbol):
     """Load historical spot data for basis modeling."""
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     df = pd.read_csv(path)

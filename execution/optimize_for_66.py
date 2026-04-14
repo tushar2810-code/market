@@ -42,7 +42,7 @@ TOP_EXPIRY_SYMBOLS = [
 
 
 def load_futures_data(symbol):
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     
@@ -160,7 +160,7 @@ SECTORS = {
 
 
 def load_prices(symbol):
-    path = os.path.join(DATA_DIR, f"{symbol}_3Y.csv")
+    path = os.path.join(DATA_DIR, f"{symbol}_5Y.csv")
     if not os.path.exists(path):
         return None
     try:
